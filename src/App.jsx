@@ -5,6 +5,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './firebase'
 import Navbar from './components/Navbar';
 import Authentication from './routes/authentication/authentication.component';
+import HealthForm from './routes/health-form/health-form.component';
 import './App.scss';
 
 const App = () => {
@@ -32,9 +33,19 @@ const App = () => {
           path="/"
           element={
             user ? (
-              <Navigate to="/dashboard" />
+              <Navigate to="/health-form" />
             ) : (
               <Authentication />
+            )
+          }
+        />
+        <Route
+          path="/health-form"
+          element={
+            user ? (
+              <HealthForm />
+            ) : (
+              <Navigate to="/" />
             )
           }
         />
@@ -53,4 +64,4 @@ const App = () => {
   );
 };
 
-export default App
+export default App;

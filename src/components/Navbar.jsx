@@ -18,6 +18,7 @@ const Navbar = () => {
         <Link to="/">Diet Plan Generator</Link>
       </div>
       <div className="navbar-menu">
+        <Link to="/health-form">Health Form</Link>
         <Link to="/dashboard">Dashboard</Link>
         <button onClick={handleSignOut} className="sign-out-button">
           Sign Out
