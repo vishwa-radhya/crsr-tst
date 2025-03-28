@@ -3,14 +3,14 @@
   justify-content: center;
   align-items: flex-start;
   min-height: 100vh;
-  background-color: #f5f5f5;
+  background-color: var(--bg-primary);
   padding: 2rem;
 
   .health-form-box {
-    background-color: white;
+    background-color: var(--bg-secondary);
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px var(--shadow-color);
     width: 100%;
     max-width: 800px;
     margin-top: 2rem;
@@ -18,12 +18,12 @@
     h2 {
       text-align: center;
       margin-bottom: 1rem;
-      color: #333;
+      color: var(--text-primary);
     }
 
     .form-description {
       text-align: center;
-      color: #666;
+      color: var(--text-secondary);
       margin-bottom: 2rem;
     }
 
@@ -44,7 +44,7 @@
         label {
           display: block;
           margin-bottom: 0.5rem;
-          color: #333;
+          color: var(--text-primary);
           font-weight: 500;
         }
 
@@ -53,14 +53,20 @@
         textarea {
           width: 100%;
           padding: 0.75rem;
-          border: 1px solid #ddd;
+          border: 1px solid var(--border-color);
           border-radius: 4px;
           font-size: 1rem;
           font-family: inherit;
+          background-color: var(--bg-secondary);
+          color: var(--text-primary);
 
           &:focus {
             outline: none;
-            border-color: #4285f4;
+            border-color: var(--accent-primary);
+          }
+
+          &::placeholder {
+            color: var(--text-secondary);
           }
         }
 
@@ -70,8 +76,12 @@
         }
 
         select {
-          background-color: white;
           cursor: pointer;
+
+          option {
+            background-color: var(--bg-secondary);
+            color: var(--text-primary);
+          }
         }
       }
     }
@@ -79,7 +89,7 @@
     .submit-button {
       width: 100%;
       padding: 1rem;
-      background-color: #2ecc71;
+      background-color: var(--accent-secondary);
       color: white;
       border: none;
       border-radius: 4px;
@@ -87,10 +97,10 @@
       font-weight: 500;
       font-size: 1.1rem;
       margin-top: 2rem;
-      transition: background-color 0.2s ease;
+      transition: filter 0.2s ease;
 
       &:hover {
-        background-color: #27ae60;
+        filter: brightness(110%);
       }
     }
   }

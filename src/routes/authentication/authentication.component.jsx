@@ -7,6 +7,7 @@ import {
   GoogleAuthProvider,
   updateProfile
 } from 'firebase/auth';
+import ThemeSwitcher from '../../components/ThemeSwitcher/ThemeSwitcher';
 import './authentication.styles.scss';
 
 const Authentication = () => {
@@ -68,6 +69,9 @@ const Authentication = () => {
 
   return (
     <div className="authentication-container">
+      <div className="theme-switcher-container">
+        <ThemeSwitcher />
+      </div>
       <div className="authentication-box">
         <h2>{isSignUp ? 'Create Account' : 'Sign In'}</h2>
         

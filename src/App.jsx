@@ -3,9 +3,11 @@ import { useEffect, useState } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './firebase'
+import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar';
 import Authentication from './routes/authentication/authentication.component';
 import HealthForm from './routes/health-form/health-form.component';
+import './styles/theme.scss';
 import './App.scss';
 
 const App = () => {
@@ -26,41 +28,43 @@ const App = () => {
   }
 
   return (
-    <>
-      {user && <Navbar />}
-      <Routes>
-        <Route
-          path="/"
-          element={
-            user ? (
-              <Navigate to="/health-form" />
-            ) : (
-              <Authentication />
-            )
-          }
-        />
-        <Route
-          path="/health-form"
-          element={
-            user ? (
-              <HealthForm />
-            ) : (
-              <Navigate to="/" />
-            )
-          }
-        />
-        <Route
-          path="/dashboard"
-          element={
-            user ? (
-              <div>Dashboard (Coming Soon)</div>
-            ) : (
-              <Navigate to="/" />
-            )
-          }
-        />
-      </Routes>
-    </>
+    <ThemeProvider>
+      <>
+        {user && <Navbar />}
+        <Routes>
+          <Route
+            path="/"
+            element={
+              user ? (
+                <Navigate to="/health-form" />
+              ) : (
+                <Authentication />
+              )
+            }
+          />
+          <Route
+            path="/health-form"
+            element={
+              user ? (
+                <HealthForm />
+              ) : (
+                <Navigate to="/" />
+              )
+            }
+          />
+          <Route
+            path="/dashboard"
+            element={
+              user ? (
+                <div>Dashboard (Coming Soon)</div>
+              ) : (
+                <Navigate to="/" />
+              )
+            }
+          />
+        </Routes>
+      </>
+    </ThemeProvider>
   );
 };
 
