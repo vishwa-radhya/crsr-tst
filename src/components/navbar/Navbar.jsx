@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import { auth } from '../firebase';
+import { auth } from '../../firebase';
 import { signOut } from 'firebase/auth';
-import ThemeSwitcher from './ThemeSwitcher/ThemeSwitcher';
+import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher';
 import './Navbar.scss';
 
 const Navbar = () => {
@@ -21,6 +21,7 @@ const Navbar = () => {
       <div className="navbar-menu">
         <Link to="/health-form">Health Form</Link>
         <Link to="/dashboard">Dashboard</Link>
+        <Link to="/food-database">Food Data</Link>
         <ThemeSwitcher />
         <button onClick={handleSignOut} className="sign-out-button">
           Sign Out

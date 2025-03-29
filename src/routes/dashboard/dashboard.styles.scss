@@ -1,0 +1,352 @@
+@import '../../styles/variables';
+
+.dashboard {
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  padding: 2rem;
+
+  .dashboard-header {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    h1 {
+      color: var(--text-primary);
+      font-size: 1.8rem;
+      margin: 0;
+    }
+  }
+
+  .dashboard-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    color: var(--text-primary);
+    font-size: 1.2rem;
+  }
+
+  .dashboard-error {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+    margin: 2rem auto;
+    max-width: 600px;
+
+    p {
+      color: var(--text-primary);
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .complete-profile-button {
+      padding: 0.8rem 1.5rem;
+      background-color: var(--accent-primary);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken(#3498db, 10%);
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 1rem;
+
+    .dashboard-header {
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+
+    .dashboard-error {
+      padding: 1.5rem;
+      margin: 1rem;
+
+      p {
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
+.dashboard-container {
+  padding: $spacing-xl;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .dashboard-header {
+    margin-bottom: $spacing-xl;
+
+    h1 {
+      color: var(--text-primary);
+      font-size: $font-size-3xl;
+      margin-bottom: $spacing-lg;
+    }
+
+    .health-summary {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: $spacing-md;
+      background-color: var(--background-secondary);
+      padding: $spacing-lg;
+      border-radius: $border-radius-md;
+      box-shadow: $shadow-sm;
+
+      .health-metric {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        .label {
+          color: var(--text-secondary);
+          font-size: $font-size-sm;
+          margin-bottom: $spacing-xs;
+        }
+
+        .value {
+          color: var(--text-primary);
+          font-size: $font-size-lg;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  .meal-plan-section {
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: $spacing-lg;
+
+      h2 {
+        color: var(--text-primary);
+        font-size: $font-size-2xl;
+        margin: 0;
+      }
+
+      .day-selector {
+        display: flex;
+        gap: $spacing-sm;
+        overflow-x: auto;
+        padding-bottom: $spacing-sm;
+
+        &::-webkit-scrollbar {
+          height: 4px;
+        }
+
+        &::-webkit-scrollbar-track {
+          background: var(--background-secondary);
+          border-radius: 2px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: var(--accent-color);
+          border-radius: 2px;
+        }
+
+        .day-button {
+          padding: $spacing-sm $spacing-md;
+          border: 1px solid var(--border-color);
+          border-radius: $border-radius-sm;
+          background-color: var(--background-secondary);
+          color: var(--text-primary);
+          font-size: $font-size-sm;
+          cursor: pointer;
+          transition: $transition-fast;
+          white-space: nowrap;
+
+          &:hover {
+            background-color: var(--background-primary);
+          }
+
+          &.active {
+            background-color: var(--accent-color);
+            color: white;
+            border-color: var(--accent-color);
+          }
+        }
+      }
+    }
+
+    .daily-totals {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: $spacing-md;
+      margin-bottom: $spacing-xl;
+      background-color: var(--background-secondary);
+      padding: $spacing-lg;
+      border-radius: $border-radius-md;
+      box-shadow: $shadow-sm;
+
+      .total-metric {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        .label {
+          color: var(--text-secondary);
+          font-size: $font-size-sm;
+          margin-bottom: $spacing-xs;
+        }
+
+        .value {
+          color: var(--text-primary);
+          font-size: $font-size-lg;
+          font-weight: 600;
+        }
+      }
+    }
+
+    .meals-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: $spacing-lg;
+
+      .meal-card {
+        background-color: var(--background-secondary);
+        padding: $spacing-lg;
+        border-radius: $border-radius-md;
+        box-shadow: $shadow-sm;
+        transition: $transition-fast;
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: $shadow-md;
+        }
+
+        h3 {
+          color: var(--text-primary);
+          font-size: $font-size-xl;
+          margin-bottom: $spacing-md;
+        }
+
+        h4 {
+          color: var(--text-primary);
+          font-size: $font-size-lg;
+          margin-bottom: $spacing-sm;
+        }
+
+        .calories {
+          color: var(--text-secondary);
+          font-size: $font-size-sm;
+          margin-bottom: $spacing-md;
+        }
+
+        .ingredients {
+          margin-bottom: $spacing-md;
+
+          h5 {
+            color: var(--text-primary);
+            font-size: $font-size-base;
+            margin-bottom: $spacing-xs;
+          }
+
+          ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+              color: var(--text-secondary);
+              font-size: $font-size-sm;
+              margin-bottom: $spacing-xs;
+              padding-left: $spacing-md;
+              position: relative;
+
+              &:before {
+                content: "•";
+                position: absolute;
+                left: 0;
+                color: var(--accent-color);
+              }
+            }
+          }
+        }
+
+        .macros {
+          display: flex;
+          justify-content: space-between;
+          color: var(--text-secondary);
+          font-size: $font-size-sm;
+        }
+
+        &.snacks {
+          .snack-item {
+            padding: $spacing-md 0;
+            border-bottom: 1px solid var(--border-color);
+
+            &:last-child {
+              border-bottom: none;
+            }
+
+            h4 {
+              margin-bottom: $spacing-xs;
+            }
+
+            .calories {
+              margin-bottom: $spacing-xs;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .dashboard-container {
+    padding: $spacing-lg;
+
+    .dashboard-header {
+      h1 {
+        font-size: $font-size-2xl;
+      }
+    }
+
+    .meal-plan-section {
+      .section-header {
+        flex-direction: column;
+        gap: $spacing-md;
+        align-items: flex-start;
+
+        h2 {
+          font-size: $font-size-xl;
+        }
+
+        .day-selector {
+          width: 100%;
+          padding-bottom: $spacing-sm;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .dashboard-container {
+    padding: $spacing-md;
+
+    .dashboard-header {
+      .health-summary {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .meal-plan-section {
+      .daily-totals {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+} 

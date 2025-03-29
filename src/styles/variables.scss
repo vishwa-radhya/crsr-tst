@@ -1,0 +1,102 @@
+// Colors
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$accent-color: #e74c3c;
+$text-primary: #2c3e50;
+$text-secondary: #7f8c8d;
+$background-primary: #ffffff;
+$background-secondary: #f8f9fa;
+$border-color: #e0e0e0;
+$error-color: #e74c3c;
+$success-color: #2ecc71;
+$warning-color: #f1c40f;
+
+// Dark theme colors
+$dark-primary-color: #2980b9;
+$dark-secondary-color: #27ae60;
+$dark-accent-color: #c0392b;
+$dark-text-primary: #ecf0f1;
+$dark-text-secondary: #bdc3c7;
+$dark-background-primary: #2c3e50;
+$dark-background-secondary: #34495e;
+$dark-border-color: #465c70;
+$dark-error-color: #c0392b;
+$dark-success-color: #27ae60;
+$dark-warning-color: #d35400;
+
+// Spacing
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+
+// Border radius
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+
+// Shadows
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
+
+// Typography
+$font-family-base: 'Poppins', sans-serif;
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.875rem;
+$font-size-base: 1rem;
+$font-size-lg: 1.125rem;
+$font-size-xl: 1.25rem;
+$font-size-2xl: 1.5rem;
+$font-size-3xl: 1.875rem;
+
+// Breakpoints
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+
+// Transitions
+$transition-fast: 0.2s ease;
+$transition-normal: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+// Z-index
+$z-index-dropdown: 1000;
+$z-index-sticky: 1020;
+$z-index-fixed: 1030;
+$z-index-modal-backdrop: 1040;
+$z-index-modal: 1050;
+$z-index-popover: 1060;
+$z-index-tooltip: 1070;
+
+// CSS Variables for theme switching
+:root {
+  // Light theme
+  --primary-color: #{$primary-color};
+  --secondary-color: #{$secondary-color};
+  --accent-color: #{$accent-color};
+  --text-primary: #{$text-primary};
+  --text-secondary: #{$text-secondary};
+  --background-primary: #{$background-primary};
+  --background-secondary: #{$background-secondary};
+  --border-color: #{$border-color};
+  --error-color: #{$error-color};
+  --success-color: #{$success-color};
+  --warning-color: #{$warning-color};
+}
+
+[data-theme="dark"] {
+  --primary-color: #{$dark-primary-color};
+  --secondary-color: #{$dark-secondary-color};
+  --accent-color: #{$dark-accent-color};
+  --text-primary: #{$dark-text-primary};
+  --text-secondary: #{$dark-text-secondary};
+  --background-primary: #{$dark-background-primary};
+  --background-secondary: #{$dark-background-secondary};
+  --border-color: #{$dark-border-color};
+  --error-color: #{$dark-error-color};
+  --success-color: #{$dark-success-color};
+  --warning-color: #{$dark-warning-color};
+} 
