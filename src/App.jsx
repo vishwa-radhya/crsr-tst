@@ -5,7 +5,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './firebase'
 import { ThemeProvider } from './context/ThemeContext';
 import { HealthDataProvider } from './context/HealthDataContext';
-import Navbar from './components/Navbar/Navbar';
+import Navbar from './components/navbar/Navbar';
 import Chatbot from './components/Chatbot/Chatbot';
 import Authentication from './routes/authentication/authentication.component';
 import HealthForm from './routes/health-form/health-form.component';
