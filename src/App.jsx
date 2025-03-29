@@ -6,6 +6,7 @@ import { auth } from './firebase'
 import { ThemeProvider } from './context/ThemeContext';
 import { HealthDataProvider } from './context/HealthDataContext';
 import Navbar from './components/Navbar/Navbar';
+import Chatbot from './components/Chatbot/Chatbot';
 import Authentication from './routes/authentication/authentication.component';
 import HealthForm from './routes/health-form/health-form.component';
 import './styles/theme.scss';
@@ -76,6 +77,7 @@ const App = () => {
               }
             />
           </Routes>
+          {user && <Chatbot />}
         </>
       </HealthDataProvider>
     </ThemeProvider>
